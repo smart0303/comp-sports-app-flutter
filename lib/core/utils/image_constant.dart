@@ -3,7 +3,7 @@ class ImageConstant {
   static String imagePath = 'assets/images';
 
   // Splash screen images
-  static String imgGroup2 = '$imagePath/img_group_2.svg';
+  static String imgGroup2 = '$imagePath/splash.png';
  // onboarding images
   static String onboardingbg1 = '$imagePath/onboarding1.png';
   static String onboardingbg2 = '$imagePath/onboarding2.png';
