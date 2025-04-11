@@ -4,7 +4,7 @@ import 'package:flutter_playground_booking_app/core/app_export.dart';
 class AppDecoration {
   // Fill decorations
   static BoxDecoration get fillBlack => BoxDecoration(
-        color: appTheme.black900.withOpacity(0.6),
+        color: appTheme.black900.withAlpha((0.60 * 255).toInt()),
       );
   static BoxDecoration get fillBlue => BoxDecoration(
         color: appTheme.blue50,

@@ -42,6 +42,12 @@ import 'package:flutter_playground_booking_app/presentation/home_container_scree
 import 'package:flutter_playground_booking_app/presentation/home_container_screen/home_container_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/login_screen/binding/login_binding.dart';
 import 'package:flutter_playground_booking_app/presentation/login_screen/login_screen.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_country_screen/binding/choose_country_binding.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_country_screen/choose_country_screen.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_city_screen/binding/choose_city_binding.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_city_screen/choose_city_screen.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_role_screen/binding/choose_role_binding.dart';
+import 'package:flutter_playground_booking_app/presentation/choose_role_screen/choose_role_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/my_booking_upcoming_tab_container_screen/binding/my_booking_upcoming_tab_container_binding.dart';
 import 'package:flutter_playground_booking_app/presentation/my_booking_upcoming_tab_container_screen/my_booking_upcoming_tab_container_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/my_grounds_screen/binding/my_grounds_binding.dart';
@@ -96,6 +102,12 @@ class AppRoutes {
   static const String loginScreen = '/login_screen';
 
   static const String splashScreen = '/splash_screen';
+
+  static const String chooseCountryScreen = '/choose_country_screen';
+
+  static const String chooseCityScreen = '/choose_city_screen';
+  
+  static const String chooseRoleScreen = '/choose_role_screen';
 
   static const String onboardingOneScreen = '/onboarding_one_screen';
 
@@ -240,6 +252,30 @@ class AppRoutes {
       page: () => SplashScreen(),
       bindings: [
         SplashBinding(),
+      ],
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: chooseCountryScreen,
+      page: () => ChooseCountryScreen(),
+      bindings: [
+        ChooseCountryBinding(),
+      ],
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: chooseCityScreen,
+      page: () => ChooseCityScreen(),
+      bindings: [
+        ChooseCityBinding(),
+      ],
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: chooseRoleScreen,
+      page: () => ChooseRoleScreen(),
+      bindings: [
+        ChooseRoleBinding(),
       ],
     ),
     GetPage(

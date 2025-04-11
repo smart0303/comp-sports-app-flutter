@@ -58,7 +58,7 @@ class CustomBottomBar extends StatelessWidget {
         color: theme.colorScheme.primaryContainer,
         boxShadow: [
           BoxShadow(
-            color: appTheme.black900.withOpacity(0.04),
+            color: appTheme.black900.withAlpha((0.04 * 255).toInt()),
             spreadRadius: 2.h,
             blurRadius: 16.h,
             offset: Offset(
@@ -116,6 +116,7 @@ class CustomBottomBar extends StatelessWidget {
                         imagePath: bottomMenuList[index].activeIcon,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
+                        color: Colors.red,
                       ),
                       Padding(
                         padding: EdgeInsets.only(

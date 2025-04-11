@@ -12,7 +12,14 @@ class ImageConstant {
   static String onboardingbg2Player = '$imagePath/onboarding2user.png';
   static String onboardingbg3Player = '$imagePath/onboarding3user.png';
 
+  // Login images
+  static String loginImage = '$imagePath/login_image.png';
+  static String googleLogo = '$imagePath/google.png';
+  static String facebookLogo = '$imagePath/facebook.png';
 
+  static String countryImage = '$imagePath/country_image.png';
+  static String playerImage = '$imagePath/player.png';
+  static String hostImage = '$imagePath/host.png';
 // eye icon
   // Common images
   static String imgIcEye = '$imagePath/img_ic_eye.svg';
@@ -68,6 +75,7 @@ class ImageConstant {
 
   static String imgRectangle34632811 = '$imagePath/img_rectangle_3463281_1.png';
 
+  static String imgAppBar = '$imagePath/img_appbar.png';
   static String imgIcDown = '$imagePath/img_ic_down.svg';
   static String imgVector = '$imagePath/img_vector.svg';
   static String imgarrowDown = '$imagePath/down_arrow_icon.svg';
@@ -335,6 +343,7 @@ class ImageConstant {
       '$imagePath/img_ic_next_onerrorcontainer.svg';
 
   static String imgIcSettings = '$imagePath/img_ic_settings.svg';
+  static String imgIcHistory = '$imagePath/symbols_history.png';
 
   static String imgIcPrivacyPolicy = '$imagePath/img_ic_privacy_policy.svg';
 

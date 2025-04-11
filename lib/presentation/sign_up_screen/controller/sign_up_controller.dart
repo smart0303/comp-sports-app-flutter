@@ -14,7 +14,11 @@ class SignUpController extends GetxController {
 
   TextEditingController emailController = TextEditingController();
 
+  TextEditingController phoneNumberController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
+  
+  TextEditingController confirmPasswordController = TextEditingController();
 
   Rx<SignUpModel> signUpModelObj = SignUpModel().obs;
 
@@ -26,6 +30,8 @@ class SignUpController extends GetxController {
     firstNameController.clear();
     lastNameController.clear();
     emailController.clear();
+    phoneNumberController.clear();
     passwordController.clear();
+    confirmPasswordController.clear();
   }
 }

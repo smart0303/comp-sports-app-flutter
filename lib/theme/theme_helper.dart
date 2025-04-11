@@ -123,7 +123,7 @@ class ThemeHelper {
       dividerTheme: DividerThemeData(
         thickness: 1,
         space: 1,
-        color: appTheme.gray60001.withOpacity(0.41),
+        color: appTheme.gray60001.withAlpha((0.41 * 255).toInt()),
       ),
     );
   }
@@ -187,7 +187,7 @@ class TextThemes {
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0XFF0E795D),
+    primary: Color(0xFFFE3301),
     primaryContainer: Color(0XFFFFFFFF),
     secondaryContainer: Color(0XFF4E4E4E),
 
@@ -202,7 +202,7 @@ class ColorSchemes {
 
   static final darkPrimaryColorScheme = ColorScheme.dark(
     // Primary colors
-    primary: Color(0XFF0E795D),
+    primary: Color(0xFFFE3301),
     primaryContainer: Color(0XFFFFFFFF),
     secondaryContainer: Color(0XFF4E4E4E),
 
@@ -275,7 +275,7 @@ class PrimaryColors {
 
   Color get deepOrangeA100 => Color(0XFFDAAA79);
 
-  Color get buttonColor => Color(0XFF0E795D);
+  Color get buttonColor => Color(0xFFFE3301);
 
   Color get darkInput => Color(0XFF0B0D0C);
 
@@ -418,11 +418,12 @@ getCustomToast(text) {
 getCommonAppBar(title,{Widget? actionwidget}) {
   return CustomAppBar(
     leadingWidth: 44.h,
+    centerTitle: true,
     leading: AppbarLeadingImage(
       onTap: (){
         Get.back();
       },
-      imagePath: ImageConstant.imgIcDown,
+      imagePath: ImageConstant.imgAppBar,
       margin: EdgeInsets.only(
         left: 20.h,
         top: 23.v,
@@ -431,7 +432,6 @@ getCommonAppBar(title,{Widget? actionwidget}) {
     ),
     title: AppbarTitle(
       text: title,
-      margin: EdgeInsets.only(left: 16.h),
     ),
     actions: [
       actionwidget?? SizedBox()

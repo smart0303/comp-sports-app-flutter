@@ -4,7 +4,6 @@ import 'controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_playground_booking_app/core/app_export.dart';
 
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -16,12 +15,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   ProfileController controller = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
-
     mediaQueryData = MediaQuery.of(context);
 
     return Column(
       children: [
-        buildComponentOne(),
+        BuildComponentOne(),
         SizedBox(height: 24.v),
         Align(
           alignment: Alignment.centerLeft,
@@ -64,110 +62,166 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         SizedBox(height: 32.v),
-       Expanded(
-         child: ListView(
-           children: [
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.myProfileScreen);
-             }, "lbl_my_profile".tr, ImageConstant.imgLightProfile),
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.settingsScreen);
-             }, "lbl_settings".tr, ImageConstant.imgIcSettings),
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.privacyPolicyScreen);
-             }, "Privacy policy".tr, ImageConstant.imgIcPrivacyPolicy),
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.helpScreen);
-             }, "lbl_help".tr, ImageConstant.imgIcHelp),
+        Expanded(
+          child: ListView(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, // Aligns children to the left
+                    children: [
+                      Text(
+                        'Personal',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                      ),
+                      SizedBox(height: 8),
+                    ],
+                  )),
+              buildIcAboutUs(() {
+                Get.toNamed(AppRoutes.myProfileScreen);
+              }, "lbl_my_profile".tr, Icons.edit),
+              SizedBox(height: 16.v),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, // Aligns children to the left
+                    children: [
+                      Text(
+                        'General',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                      ),
+                      SizedBox(height: 8),
+                    ],
+                  )),
+              buildIcAboutUs(() {
+                Get.toNamed(AppRoutes.settingsScreen);
+              }, "History", Icons.history),
+              SizedBox(height: 8),
 
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.aboutUsScreen);
-             }, "lbl_about_us".tr, ImageConstant.imgIcAboutUs),
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               showDialog(
-                 barrierDismissible: false,
-                 context: context,
-                 builder: (context) {
-                   return AlertDialog(
-                       insetPadding: EdgeInsets.all(16),
-                       shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(20)),
-                       contentPadding: EdgeInsets.zero,
-                       content: RateUsExperirnceScreen());
-                 },
-               );
-             }, "lbl_rate_us".tr, ImageConstant.imgStar120x20),
-             SizedBox(height: 16.v),
-             buildIcAboutUs((){
-               Get.toNamed(AppRoutes.myGroundsScreen);
-             }, "lbl_my_grounds".tr, ImageConstant.imgIcImage),
-             SizedBox(height: 16.v),
-             Center(
-               child: GestureDetector(
-                   onTap: () {
-                     showDialog(
-                       barrierDismissible: false,
-                       context: context,
-                       builder: (context) {
-                         return AlertDialog(
-                             insetPadding: EdgeInsets.all(16),
-                             shape: RoundedRectangleBorder(
-                                 borderRadius: BorderRadius.circular(20)),
-                             contentPadding: EdgeInsets.zero,
-                             content: LogOutDialogue());
-                       },
-                     );
-                   },
-                   child: Padding(
-                       padding: EdgeInsets.only(left: 4.h),
-                       child: Text("Logout",
-                           style: CustomTextStyles
-                               .titleMediumPrimary700))),
-             ),
-             SizedBox(height: 16.v),
-           ],
-         ),
-       )
+              buildIcAboutUs(() {
+                Get.toNamed('/faq');
+              }, "FAQ", Icons.help_outline),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/privacy');
+              }, "Privacy Policy", Icons.privacy_tip),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/about');
+              }, "About us", Icons.info_outline),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/rate');
+              }, "Rate us", Icons.star_border),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/ownground');
+              }, "Own Ground", Icons.sports_soccer),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/leaderboard');
+              }, "Leaderboard", Icons.leaderboard),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/transaction');
+              }, "Transaction History", Icons.receipt_long),
+              SizedBox(height: 8),
+
+              buildIcAboutUs(() {
+                Get.toNamed('/refer');
+              }, "Refer & Earn", Icons.card_giftcard),
+              SizedBox(height: 8),
+
+              // buildIcAboutUs(() {
+              //   Get.toNamed(AppRoutes.settingsScreen);
+              // }, "lbl_settings".tr, ImageConstant.imgIcSettings),
+              // SizedBox(height: 16.v),
+              // buildIcAboutUs(() {
+              //   Get.toNamed(AppRoutes.privacyPolicyScreen);
+              // }, "Privacy policy".tr, ImageConstant.imgIcPrivacyPolicy),
+              // SizedBox(height: 16.v),
+              // buildIcAboutUs(() {
+              //   Get.toNamed(AppRoutes.helpScreen);
+              // }, "lbl_help".tr, ImageConstant.imgIcHelp),
+              // SizedBox(height: 16.v),
+              // buildIcAboutUs(() {
+              //   Get.toNamed(AppRoutes.aboutUsScreen);
+              // }, "lbl_about_us".tr, ImageConstant.imgIcAboutUs),
+              SizedBox(height: 16.v),
+              // buildIcAboutUs(() {
+              //   showDialog(
+              //     barrierDismissible: false,
+              //     context: context,
+              //     builder: (context) {
+              //       return AlertDialog(
+              //           insetPadding: EdgeInsets.all(16),
+              //           shape: RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(20)),
+              //           contentPadding: EdgeInsets.zero,
+              //           content: RateUsExperirnceScreen());
+              //     },
+              //   );
+              // }, "lbl_rate_us".tr, ImageConstant.imgStar120x20),
+              SizedBox(height: 16.v),
+              // buildIcAboutUs(() {
+              //   Get.toNamed(AppRoutes.myGroundsScreen);
+              // }, "lbl_my_grounds".tr, ImageConstant.imgIcImage),
+              SizedBox(height: 16.v),
+              Center(
+                child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                        barrierDismissible: false,
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                              insetPadding: EdgeInsets.all(16),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              contentPadding: EdgeInsets.zero,
+                              content: LogOutDialogue());
+                        },
+                      );
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 4.h),
+                        child: Text("Logout",
+                            style: CustomTextStyles.titleMediumPrimary700))),
+              ),
+              SizedBox(height: 16.v),
+            ],
+          ),
+        )
       ],
     );
   }
 
-  /// Section Widget
-  Widget buildComponentOne() {
-    return Container(
-      width: double.maxFinite,
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.h,
-        vertical: 17.v,
-      ),
-      decoration: AppDecoration.white.copyWith(
-        color: appTheme.bgColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 8.v),
-          Text(
-            "lbl_profile".tr,
-            style: theme.textTheme.headlineMedium!.copyWith(
-              color: appTheme.black900,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-
-
-
   /// Common widget
-  Widget buildIcAboutUs(onTap,title,icon) {
+  Widget buildIcAboutUs(onTap, title, icon) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.h),
       child: GestureDetector(
@@ -186,15 +240,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 width: 48.adaptSize,
                 padding: EdgeInsets.all(12.h),
                 decoration: AppDecoration.white.copyWith(
-                  color: PrefUtils().getThemeData() == "primary"?appTheme.whiteA700:appTheme.lightgraynightMode,
+                  color: PrefUtils().getThemeData() == "primary"
+                      ? appTheme.whiteA700
+                      : appTheme.lightgraynightMode,
                   borderRadius: BorderRadiusStyle.circleBorder24,
                 ),
-                child: CustomImageView(
-                  color: appTheme.black900,
-                  imagePath: icon,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
-                  alignment: Alignment.center,
+                child: Icon(
+                  icon, // Use the history icon
+                  size: 20, // Set the size of the icon
+                  color: Colors.grey, // Set the color of the icon
                 ),
               ),
               Padding(
@@ -230,7 +284,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 }
 
+class BuildComponentOne extends StatefulWidget {
+  @override
+  _BuildComponentOneState createState() => _BuildComponentOneState();
+}
 
+class _BuildComponentOneState extends State<BuildComponentOne> {
+  bool isUsSelected = true;
 
-
-
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.red,
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back, color: Colors.white),
+        onPressed: () {
+        },
+      ),
+      title: Text(
+        'Profile',
+        style: theme.textTheme.titleLarge!.copyWith(
+          color: appTheme.whiteA700,
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: ToggleButtons(
+            isSelected: [!isUsSelected, isUsSelected],
+            onPressed: (index) {
+              setState(() {
+                isUsSelected = index == 1;
+              });
+            },
+            color: Colors.white,
+            selectedColor: Colors.red,
+            fillColor: Colors.white,
+            selectedBorderColor: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Text('CA'),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Text('US'),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

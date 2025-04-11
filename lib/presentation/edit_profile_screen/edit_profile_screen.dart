@@ -23,8 +23,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
  @override
   void initState() {
-    // TODO: implement initState
-   controller.emailController.text = "msg_johnabram_gmail_com".tr;
+    controller.emailController.text = "msg_johnabram_gmail_com".tr;
     controller.masterInputController.text = "John";
     controller.masterInputController1.text = "abram";
     controller.update();

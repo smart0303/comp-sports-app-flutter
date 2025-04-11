@@ -35,7 +35,6 @@ class _HomeContainerScreenState extends State<HomeContainerScreen> {
   ];
   @override
   void initState() {
-    // TODO: implement initState
     setSafeAreaColor();
     super.initState();
   }

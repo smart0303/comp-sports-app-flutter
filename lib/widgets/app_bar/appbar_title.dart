@@ -22,7 +22,9 @@ class AppbarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap!.call();
+        if (onTap != null) {
+          onTap!();
+        }
       },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,

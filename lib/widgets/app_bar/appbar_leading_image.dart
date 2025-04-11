@@ -28,7 +28,7 @@ class AppbarLeadingImage extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: CustomImageView(
 
-          color: appTheme.black900,
+          color: theme.primaryColor,
           imagePath: imagePath,
           height: 24.adaptSize,
           width: 24.adaptSize,

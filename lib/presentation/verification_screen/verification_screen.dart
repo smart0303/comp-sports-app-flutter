@@ -139,7 +139,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
  /// Navigates to the resetPasswordScreen when the action is triggered.
  onTapVerify() {
   Get.toNamed(
-   AppRoutes.resetPasswordScreen,
+   AppRoutes.chooseCountryScreen,
   );
  }
 }
