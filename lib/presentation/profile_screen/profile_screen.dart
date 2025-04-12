@@ -117,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 8),
 
               buildIcAboutUs(() {
-                Get.toNamed('/faq');
+                Get.toNamed(AppRoutes.faqScreen);
               }, "FAQ", Icons.help_outline),
               SizedBox(height: 8),
 
@@ -152,7 +152,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 8),
 
               buildIcAboutUs(() {
-                Get.toNamed('/refer');
+                Get.toNamed(AppRoutes.referEarnScreen);
               }, "Refer & Earn", Icons.card_giftcard),
               SizedBox(height: 8),
 

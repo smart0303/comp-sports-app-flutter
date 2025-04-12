@@ -40,6 +40,8 @@ import 'package:flutter_playground_booking_app/presentation/history_detail_scree
 import 'package:flutter_playground_booking_app/presentation/history_detail_screen/history_detail_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/home_container_screen/binding/home_container_binding.dart';
 import 'package:flutter_playground_booking_app/presentation/home_container_screen/home_container_screen.dart';
+import 'package:flutter_playground_booking_app/presentation/refer_earn_screen/binding/refer_earn_binding.dart';
+import 'package:flutter_playground_booking_app/presentation/refer_earn_screen/refer_earn_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/login_screen/binding/login_binding.dart';
 import 'package:flutter_playground_booking_app/presentation/login_screen/login_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/choose_country_screen/binding/choose_country_binding.dart';
@@ -96,6 +98,8 @@ import 'package:flutter_playground_booking_app/presentation/verification_screen/
 import 'package:flutter_playground_booking_app/presentation/verification_screen/verification_screen.dart';
 import 'package:flutter_playground_booking_app/presentation/write_a_review_screen/binding/write_a_review_binding.dart';
 import 'package:flutter_playground_booking_app/presentation/write_a_review_screen/write_a_review_screen.dart';
+import 'package:flutter_playground_booking_app/presentation/faq_screen/binding/faq_binding.dart';
+import 'package:flutter_playground_booking_app/presentation/faq_screen/faq_screen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
@@ -106,7 +110,7 @@ class AppRoutes {
   static const String chooseCountryScreen = '/choose_country_screen';
 
   static const String chooseCityScreen = '/choose_city_screen';
-  
+
   static const String chooseRoleScreen = '/choose_role_screen';
 
   static const String onboardingOneScreen = '/onboarding_one_screen';
@@ -133,6 +137,7 @@ class AppRoutes {
   static const String homePage = '/home_page';
 
   static const String homeContainerScreen = '/home_container_screen';
+  static const String referEarnScreen = '/refer_earn_screen';
 
   static const String notificationEmptyScreen = '/notification_empty_screen';
 
@@ -157,6 +162,7 @@ class AppRoutes {
   static const String detailScreen = '/detail_screen';
 
   static const String reviewScreen = '/review_screen';
+  static const String faqScreen = '/faq_screen';
 
   static const String writeAReviewScreen = '/write_a_review_screen';
 
@@ -336,6 +342,14 @@ class AppRoutes {
     ),
     GetPage(
       transition: Transition.rightToLeft,
+      name: referEarnScreen,
+      page: () => ReferEarnScreen(),
+      bindings: [
+        ReferEarnBinding(),
+      ],
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
       name: notificationScreen,
       page: () => NotificationScreen(),
       bindings: [
@@ -404,6 +418,14 @@ class AppRoutes {
       page: () => ReviewScreen(),
       bindings: [
         ReviewBinding(),
+      ],
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: faqScreen,
+      page: () => FaqScreen(),
+      bindings: [
+        FaqBinding(),
       ],
     ),
     GetPage(
